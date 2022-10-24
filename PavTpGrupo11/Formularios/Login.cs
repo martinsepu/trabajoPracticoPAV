@@ -37,7 +37,7 @@ namespace PavTpGrupo11.Formularios
             {
                 MessageBox.Show("Bienvenido");
 
-                Form1 ventana = new Form1();
+                Principal ventana = new Principal();
                 ventana.Show();
                 this.Hide();
 

@@ -24,7 +24,7 @@ namespace PavTpGrupo11.Formularios
         }
         private void ABM_Obra_Load(object sender, EventArgs e)
         {
-            grillaObra.DataSource = cn.ConsultarObrasDG();
+            grillaObra.DataSource = ConexionSQL.ConsultarObrasDG();
             cargarCombo();
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -62,9 +62,9 @@ namespace PavTpGrupo11.Formularios
                 {
                     throw;
                 }
-                grillaObra.DataSource = cn.ConsultarObrasDG();
+                grillaObra.DataSource = ConexionSQL.ConsultarObrasDG();
             }
-            grillaObra.DataSource = cn.ConsultarObrasDG();
+            grillaObra.DataSource = ConexionSQL.ConsultarObrasDG();
 
         }
 
@@ -98,9 +98,9 @@ namespace PavTpGrupo11.Formularios
                 {
                     throw;
                 }
-                grillaObra.DataSource = cn.ConsultarObrasDG();
+                grillaObra.DataSource = ConexionSQL.ConsultarObrasDG();
             }
-            grillaObra.DataSource = cn.ConsultarObrasDG();
+            grillaObra.DataSource = ConexionSQL.ConsultarObrasDG();
 
         }
 
@@ -132,9 +132,9 @@ namespace PavTpGrupo11.Formularios
                 {
                     throw;
                 }
-                grillaObra.DataSource = cn.ConsultarObrasDG();
+                grillaObra.DataSource = ConexionSQL.ConsultarObrasDG();
             }
-            grillaObra.DataSource = cn.ConsultarObrasDG();
+            grillaObra.DataSource = ConexionSQL.ConsultarObrasDG();
         }
 
         private void Btn_LimpiarCamposObra_Click(object sender, EventArgs e)
@@ -145,7 +145,7 @@ namespace PavTpGrupo11.Formularios
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Form1 frm = new Form1();
+            Principal frm = new Principal();
             frm.Show();
             this.Hide();
         }

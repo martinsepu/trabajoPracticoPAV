@@ -51,9 +51,11 @@
     <Compile Include="AccesoADatos\AD-Respuestos.cs" />
     <Compile Include="AccesoADatos\AD-usuarios.cs" />
     <Compile Include="AccesoADatos\AD_EMPLEADOS.cs" />
+    <Compile Include="AccesoADatos\AD_Herramientas.cs" />
     <Compile Include="AccesoADatos\AD_Materiales.cs" />
     <Compile Include="AccesoADatos\AD_Obras.cs" />
     <Compile Include="AccesoADatos\AD_Proveedores.cs" />
+    <Compile Include="AccesoADatos\AD_Venta.cs" />
     <Compile Include="AccesoADatos\ConexionSQL.cs" />
     <Compile Include="Entidades\Barrio.cs" />
     <Compile Include="Entidades\Camion.cs" />
@@ -62,6 +64,7 @@
     <Compile Include="Entidades\MarcaCamion.cs" />
     <Compile Include="Entidades\MarcaRepuesto.cs" />
     <Compile Include="Entidades\Material.cs" />
+    <Compile Include="Entidades\Objeto_de_Venta.cs" />
     <Compile Include="Entidades\Obra.cs" />
     <Compile Include="Entidades\Proveedor.cs" />
     <Compile Include="Entidades\Repuesto.cs" />
@@ -70,11 +73,12 @@
     <Compile Include="Entidades\TipoHerramienta.cs" />
     <Compile Include="Entidades\TipoRepuesto.cs" />
     <Compile Include="Entidades\Usuario.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Entidades\Venta.cs" />
+    <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\A B M Empleados.cs">
       <SubType>Form</SubType>
@@ -130,11 +134,17 @@
     <Compile Include="Formularios\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Registro_Venta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Registro_Venta.Designer.cs">
+      <DependentUpon>Registro_Venta.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmProveedores.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\A B M Empleados.resx">
       <DependentUpon>A B M Empleados.cs</DependentUpon>
@@ -162,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Registro_Venta.resx">
+      <DependentUpon>Registro_Venta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -236,6 +249,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\construccion1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ventas.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

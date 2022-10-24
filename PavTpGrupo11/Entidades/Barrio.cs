@@ -16,5 +16,9 @@ namespace PavTpGrupo11.Entidades
             Id = id;
             Nombre = nombre;
         }
+        public Barrio()
+        {
+
+        }
     }
 }

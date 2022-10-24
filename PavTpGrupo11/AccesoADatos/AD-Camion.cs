@@ -12,9 +12,13 @@ namespace PavTpGrupo11.AccesoADatos
     {
         ConexionSQL cn = new ConexionSQL();
 
-        public  DataTable ObtenerCamiones()
+        public  static DataTable ObtenerCamiones()
         {
-            return cn.ObtenerCamiones();
+            return ConexionSQL.ObtenerCamiones();
+        }
+        public Camion ObtenerCamion(string patente)
+        {
+            return cn.obtenerCamion(patente);
         }
 
 

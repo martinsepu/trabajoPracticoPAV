@@ -134,7 +134,7 @@ namespace PavTpGrupo11.Formularios
             // TxtMarca
             // 
             this.TxtMarca.Location = new System.Drawing.Point(483, 100);
-            this.TxtMarca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtMarca.Margin = new System.Windows.Forms.Padding(2);
             this.TxtMarca.Name = "TxtMarca";
             this.TxtMarca.Size = new System.Drawing.Size(131, 20);
             this.TxtMarca.TabIndex = 1;
@@ -143,18 +143,19 @@ namespace PavTpGrupo11.Formularios
             // 
             this.GrillaCamiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GrillaCamiones.Location = new System.Drawing.Point(64, 220);
-            this.GrillaCamiones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GrillaCamiones.Margin = new System.Windows.Forms.Padding(2);
             this.GrillaCamiones.Name = "GrillaCamiones";
             this.GrillaCamiones.RowHeadersWidth = 51;
             this.GrillaCamiones.RowTemplate.Height = 24;
             this.GrillaCamiones.Size = new System.Drawing.Size(533, 185);
             this.GrillaCamiones.TabIndex = 80;
+            this.GrillaCamiones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaCamiones_CellClick);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PavTpGrupo11.Properties.Resources.transporte_de_camiones_con_materiales_de_construccion;
             this.pictureBox1.Location = new System.Drawing.Point(50, 10);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(272, 192);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -219,7 +220,7 @@ namespace PavTpGrupo11.Formularios
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLimpiarCampos);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ABM_Camiones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABM_Camiones";

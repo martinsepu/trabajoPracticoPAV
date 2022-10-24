@@ -97,6 +97,7 @@ namespace PavTpGrupo11.Formularios
             this.GrillaEmpleados.Name = "GrillaEmpleados";
             this.GrillaEmpleados.Size = new System.Drawing.Size(632, 164);
             this.GrillaEmpleados.TabIndex = 18;
+            this.GrillaEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaEmpleados_CellClick);
             // 
             // txtCalle
             // 

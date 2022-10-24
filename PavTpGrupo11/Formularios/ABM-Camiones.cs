@@ -22,14 +22,14 @@ namespace PavTpGrupo11.Formularios
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Form1 frm = new Form1();
+            Principal frm = new Principal();
             frm.Show();
             this.Hide();
         }
 
         private void ABM_Camiones_Load(object sender, EventArgs e)
         {
-            GrillaCamiones.DataSource = camion.ObtenerCamiones();
+            GrillaCamiones.DataSource = AD_Camion.ObtenerCamiones();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -63,9 +63,9 @@ namespace PavTpGrupo11.Formularios
 
 
                 }
-                GrillaCamiones.DataSource = camion.ObtenerCamiones();
+                GrillaCamiones.DataSource = AD_Camion.ObtenerCamiones();
             }
-            GrillaCamiones.DataSource = camion.ObtenerCamiones();
+            GrillaCamiones.DataSource = AD_Camion.ObtenerCamiones();
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -96,9 +96,9 @@ namespace PavTpGrupo11.Formularios
                 {
                     MessageBox.Show("Ese camion no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                GrillaCamiones.DataSource = camion.ObtenerCamiones();
+                GrillaCamiones.DataSource = AD_Camion.ObtenerCamiones();
             }
-            GrillaCamiones.DataSource = camion.ObtenerCamiones();
+            GrillaCamiones.DataSource = AD_Camion.ObtenerCamiones();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -129,9 +129,9 @@ namespace PavTpGrupo11.Formularios
                 {
                     throw;
                 }
-                GrillaCamiones.DataSource = camion.ObtenerCamiones();
+                GrillaCamiones.DataSource = AD_Camion.ObtenerCamiones();
             }
-            GrillaCamiones.DataSource = camion.ObtenerCamiones();
+            GrillaCamiones.DataSource = AD_Camion.ObtenerCamiones();
         }
 
         private void btnLimpiarCampos_Click(object sender, EventArgs e)
@@ -145,6 +145,23 @@ namespace PavTpGrupo11.Formularios
             TxtMarca.Text = "";
             txtAño.Text = "";
             txtCapacidad.Text = "";
+        }
+
+        private void GrillaCamiones_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = e.RowIndex;
+            DataGridViewRow filaSelect = GrillaCamiones.Rows[indice];
+            string patente = filaSelect.Cells["Patente"].Value.ToString();
+            Camion ca = camion.ObtenerCamion(patente);
+            limpiarCampos();
+            cargarCampos(ca);
+        }
+        private void cargarCampos(Camion ca)
+        {
+            txtPatente.Text=ca.patente;
+            TxtMarca.Text=ca.Marca;
+            txtAño.Text = ca.Anio_modelo.ToString();
+            txtCapacidad.Text = ca.Capacidad.ToString();
         }
     }
 }

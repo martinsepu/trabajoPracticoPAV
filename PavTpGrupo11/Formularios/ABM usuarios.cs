@@ -22,7 +22,7 @@ namespace PavTpGrupo11.Formularios
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Form1 frm = new Form1();
+            Principal frm = new Principal();
             frm.Show();
             this.Hide();
         }
@@ -168,6 +168,23 @@ namespace PavTpGrupo11.Formularios
             txtContrasenia.Text = "";
             txtUsuario.Text = "";
             txtRepecontra.Text = "";
+        }
+
+        private void grillaUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = e.RowIndex;
+            DataGridViewRow filaSelect = grillaUsuarios.Rows[indice];
+            string cod = filaSelect.Cells["Nombre"].Value.ToString();
+            Usuario u = usuarioN.obtenerUsuario(cod);
+            limpiarCampos();
+            cargarCampos(u);
+        }
+        private void cargarCampos(Usuario u)
+        {
+            txtUsuario.Text = u.nombre.ToString();
+            txtContrasenia.Text=u.contrasena.ToString();
+            txtRepecontra.Text = u.contrasena.ToString();
+
         }
     }
 }

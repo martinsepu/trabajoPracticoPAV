@@ -173,6 +173,7 @@ namespace PavTpGrupo11.Formularios
             this.grillaMateriales.RowTemplate.Height = 24;
             this.grillaMateriales.Size = new System.Drawing.Size(686, 196);
             this.grillaMateriales.TabIndex = 80;
+            this.grillaMateriales.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grillaMateriales_CellClick);
             // 
             // btnBorrar
             // 

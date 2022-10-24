@@ -9,6 +9,7 @@ namespace PavTpGrupo11.Entidades
     class Herramienta
     {
         public int Codigo { get; set; }
+        public string Nombre { get; set; }
 
         public string Marca { get; set; }
 
@@ -19,7 +20,7 @@ namespace PavTpGrupo11.Entidades
         public int Cod_Proveedor { get; set; }
 
 
-        public int Precio { get; set; }
+        public float Precio { get; set; }
 
 
         public string Vida_Util { get; set; }

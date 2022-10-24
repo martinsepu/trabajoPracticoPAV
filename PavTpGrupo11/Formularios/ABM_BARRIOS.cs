@@ -136,7 +136,7 @@ namespace PavTpGrupo11.Formularios
 
         private void btnSalirB_Click(object sender, EventArgs e)
         {
-            Form1 frm = new Form1();
+            Principal frm = new Principal();
             frm.Show();
             this.Hide();
         }
@@ -154,6 +154,21 @@ namespace PavTpGrupo11.Formularios
         {
             TxtIDBarrio.Text = "";
             txtNombreB.Text = "";
+        }
+
+        private void GrillaBarrio_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = e.RowIndex;
+            DataGridViewRow filaSelect = grillaBarrios.Rows[indice];
+            int cod = int.Parse(filaSelect.Cells["id_barrio"].Value.ToString());
+            Barrio em = cn.ObtenerBarrio(cod);
+            limpiarCampos();
+            CargarCampos(em);
+        }
+        private void CargarCampos(Barrio b)
+        {
+            txtNombreB.Text = b.Nombre;
+            TxtIDBarrio.Text = b.Id.ToString();
         }
     }
 

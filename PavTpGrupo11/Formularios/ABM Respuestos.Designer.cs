@@ -87,12 +87,13 @@ namespace PavTpGrupo11.Formularios
             // 
             this.GrillaRepuestos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GrillaRepuestos.Location = new System.Drawing.Point(53, 178);
-            this.GrillaRepuestos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GrillaRepuestos.Margin = new System.Windows.Forms.Padding(2);
             this.GrillaRepuestos.Name = "GrillaRepuestos";
             this.GrillaRepuestos.RowHeadersWidth = 51;
             this.GrillaRepuestos.RowTemplate.Height = 24;
             this.GrillaRepuestos.Size = new System.Drawing.Size(258, 156);
             this.GrillaRepuestos.TabIndex = 84;
+            this.GrillaRepuestos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaRepuestos_CellClick);
             // 
             // btnBorrar
             // 
@@ -135,7 +136,7 @@ namespace PavTpGrupo11.Formularios
             // 
             this.pictureBox1.Image = global::PavTpGrupo11.Properties.Resources.piezas_de_repuesto;
             this.pictureBox1.Location = new System.Drawing.Point(53, 33);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(148, 119);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -145,7 +146,7 @@ namespace PavTpGrupo11.Formularios
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(302, 109);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(157, 20);
             this.txtNombre.TabIndex = 1;
@@ -178,7 +179,7 @@ namespace PavTpGrupo11.Formularios
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ABM_Respuestos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABM_Respuestos";
