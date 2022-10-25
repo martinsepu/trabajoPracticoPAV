@@ -181,7 +181,7 @@ namespace PavTpGrupo11.Formularios
         private void limpiarMateriales()
         {
             abilitarBusqueda=false;
-            txtCodigoMat.Text = "";
+           
             txtPrecioMat.Text = "";
             txtCantidadMat.Text = "";
             cmbMaterial.SelectedIndex = -1;
@@ -229,7 +229,7 @@ namespace PavTpGrupo11.Formularios
             {
                 tienePre = true;
             }
-            if (txtFechaDev.Text.Equals(""))
+            if (txtFechaDev.Text.Equals("  /  /       :") || txtFechaDev.Text.Equals(" __/__/____ __:__"))
             {
                 MessageBox.Show("Debe seleccionar una fecha");
                 txtFechaDev.Focus();
@@ -294,7 +294,7 @@ namespace PavTpGrupo11.Formularios
                 tieneAtraso = true;
                 atraso = int.Parse(txtAtraso.Text);
             }
-            if (txtFechaEntrega.Text.Equals(""))
+            if (txtFechaEntrega.Text.Equals("  /  /       :") || txtFechaEntrega.Text.Equals(" __/__/____ __:__"))
             {
                 MessageBox.Show("Debe ingresar la fecha y hora de entrega");
                 txtFechaEntrega.Focus();
