@@ -137,5 +137,11 @@ namespace PavTpGrupo11
             v.Show();
             this.Hide();
         }
+
+        private void listadoEmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReporteListadoEmpleados r = new ReporteListadoEmpleados();
+            r.ShowDialog();
+        }
     }
 }
