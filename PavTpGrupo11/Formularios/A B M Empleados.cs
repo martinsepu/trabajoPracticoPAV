@@ -26,7 +26,7 @@ namespace PavTpGrupo11.Formularios
 
         private void frmABM_EMPLEADOS_Load(object sender, EventArgs e)
         {
-            GrillaEmpleados.DataSource = cn.ConsultarUsuariosDG();
+            GrillaEmpleados.DataSource = AD_EMPLEADOS.ConsultarUsuariosDG();
             cargarCombo();
         }
 
@@ -64,10 +64,10 @@ namespace PavTpGrupo11.Formularios
                 }
 
 
-                GrillaEmpleados.DataSource = cn.ConsultarUsuariosDG();
+                GrillaEmpleados.DataSource = AD_EMPLEADOS.ConsultarUsuariosDG();
             }
             
-            GrillaEmpleados.DataSource = cn.ConsultarUsuariosDG();
+            GrillaEmpleados.DataSource = AD_EMPLEADOS.ConsultarUsuariosDG();
 
         }
 
@@ -104,7 +104,7 @@ namespace PavTpGrupo11.Formularios
 
 
             }
-            GrillaEmpleados.DataSource = cn.ConsultarUsuariosDG();
+            GrillaEmpleados.DataSource = AD_EMPLEADOS.ConsultarUsuariosDG();
 
         }
 
@@ -140,13 +140,13 @@ namespace PavTpGrupo11.Formularios
                 }
 
 
-                GrillaEmpleados.DataSource = cn.ConsultarUsuariosDG();
+                GrillaEmpleados.DataSource = AD_EMPLEADOS.ConsultarUsuariosDG();
             }
         }
 
             private void btnSalir_Click(object sender, EventArgs e)
             {
-            Form1 frm = new Form1();
+            Principal frm = new Principal();
             frm.Show();
             this.Hide();
             }
@@ -182,6 +182,26 @@ namespace PavTpGrupo11.Formularios
             cmbBarrios.ValueMember = "id_barrio";
             cmbBarrios.SelectedIndex = -1;
             
+        }
+
+        private void GrillaEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = e.RowIndex;
+            DataGridViewRow filaSelect = GrillaEmpleados.Rows[indice];
+            int cod = int.Parse(filaSelect.Cells["Cod_Empleado"].Value.ToString());
+            Empleado em = cn.obtenerEmpleado(cod);
+            limpiarCampos();
+            cargarCampos(em);
+        }
+        private void cargarCampos(Empleado e)
+        {
+            txtNombre.Text=e.Nombre;
+            txtDocumento.Text = e.NroTipoDocumento.ToString();
+            txtCodigoEMPLEADO.Text=e.CodigoEmpleado.ToString();
+            txtCalle.Text=e.calle.ToString();
+            txtCalleNRO.Text=e.NroCalle.ToString();
+            txttelefonoE.Text = e.telefono.ToString();
+            cmbBarrios.SelectedValue = e.IdBarrio; 
         }
     }
     }

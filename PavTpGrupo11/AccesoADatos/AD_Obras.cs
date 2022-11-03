@@ -11,9 +11,9 @@ namespace PavTpGrupo11.AccesoADatos
     public class AD_Obras
     {
         ConexionSQL cn = new ConexionSQL();
-        public DataTable ConsultarObrasDG()
+        public static DataTable ConsultarObrasDG()
         {
-            return cn.ConsultarObrasDG();
+            return ConexionSQL.ConsultarObrasDG();
         }
 
         public int InsertarObra(Obra ob)

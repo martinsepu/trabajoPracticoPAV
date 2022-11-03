@@ -17,6 +17,10 @@ namespace PavTpGrupo11.AccesoADatos
         {
             return cn.ObtenerRepuestos();
         }
+        public Repuesto obtenerRepuesto(int cod)
+        {
+            return cn.ObtenerRepuestos(cod);
+        }
 
         public int InsertarRespuesto(Repuesto repuesto)
         {

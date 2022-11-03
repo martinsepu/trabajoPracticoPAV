@@ -16,7 +16,7 @@ namespace PavTpGrupo11.AccesoADatos
    public  class ConexionSQL
     {
         static string cadena = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
-        SqlConnection conexion = new SqlConnection(cadena);
+        static SqlConnection conexion = new SqlConnection(cadena);
 
         public int Login( string us, string pass )
         {
@@ -40,6 +40,27 @@ namespace PavTpGrupo11.AccesoADatos
             return tabla;
 
 
+        }
+        public Usuario obtenerUsuario(string nom)
+        {
+            Usuario resultado = new Usuario();
+            conexion.Open();
+            string query = "SELECT * FROM Usuario WHERE Nombre = '" + nom + "'";
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = query;
+            cmd.Connection = conexion;
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader != null && reader.Read())
+            {
+                resultado.contrasena = reader["Contraseña"].ToString();
+                resultado.nombre = reader["Nombre"].ToString();
+
+            }
+            conexion.Close();
+            return resultado;
         }
 
         public int InsertarUsuarioU(Usuario us)
@@ -91,6 +112,26 @@ namespace PavTpGrupo11.AccesoADatos
 
 
         }
+        public Repuesto ObtenerRepuestos(int cod)
+        {
+            Repuesto resultado = new Repuesto();
+            conexion.Open();
+            string query = "SELECT * FROM REPUESTO WHERE Codigo_Repuesto = '" + cod + "'";
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = query;
+            cmd.Connection = conexion;
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader != null && reader.Read())
+            {
+                resultado.Codigo = int.Parse(reader["Codigo_Repuesto"].ToString());
+                resultado.nombre = reader["Nombre_Repuesto"].ToString();
+            }
+            conexion.Close();
+            return resultado;
+        }
 
         public int InsertarRepuesto(Repuesto re)
         {
@@ -130,7 +171,7 @@ namespace PavTpGrupo11.AccesoADatos
 
         }
 
-        public DataTable ConsultarUsuariosDG()
+        public static DataTable ConsultarUsuariosDG()
         {
             string query = "SELECT * FROM Empleados";
             SqlCommand cmd = new SqlCommand(query, conexion);
@@ -141,6 +182,32 @@ namespace PavTpGrupo11.AccesoADatos
             return tabla;
 
 
+        }
+        public Empleado obtenerEmpleado(int cod)
+        {
+            Empleado resultado = new Empleado();
+            conexion.Open();
+            string query = "SELECT * FROM Empleados WHERE Cod_Empleado = '" + cod + "'";
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = query;
+            cmd.Connection = conexion;
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader != null && reader.Read())
+            {
+                resultado.CodigoEmpleado = int.Parse(reader["Cod_Empleado"].ToString());
+                resultado.Nombre = reader["Nombre"].ToString();
+                resultado.NroTipoDocumento = int.Parse(reader["Documento"].ToString());
+                resultado.calle = reader["calle"].ToString();
+                resultado.NroCalle = int.Parse(reader["nro_calle"].ToString());
+                resultado.telefono = int.Parse(reader["Telefono"].ToString());
+                resultado.IdBarrio = int.Parse(reader["id_barrio"].ToString());
+
+            }
+            conexion.Close();
+            return resultado;
         }
         public DataTable ConsultarBarriosDG()
         {
@@ -153,6 +220,27 @@ namespace PavTpGrupo11.AccesoADatos
             return tabla;
 
 
+        }
+        public Barrio ObtenerBarrio(int id)
+        {
+            Barrio resultado = new Barrio();
+            conexion.Open();
+            string query = "SELECT * FROM Barrios WHERE id_barrio = '" + id + "'";
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = query;
+            cmd.Connection = conexion;
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader != null && reader.Read())
+            {
+                resultado.Id = int.Parse(reader["id_barrio"].ToString());
+                resultado.Nombre = reader["nombre_barrio"].ToString();
+
+            }
+            conexion.Close();
+            return resultado;
         }
         public int InsertarEmpleado(Empleado emp)
 
@@ -194,6 +282,7 @@ namespace PavTpGrupo11.AccesoADatos
 
 
         }
+       
 
         public bool InsertarBarrio(Barrio ba)
 
@@ -333,7 +422,7 @@ namespace PavTpGrupo11.AccesoADatos
             return flag;
         }
         // Obra david
-        public DataTable ConsultarObrasDG()
+        public static DataTable ConsultarObrasDG()
         {
             string query = "SELECT * FROM Obras";
             SqlCommand cmd = new SqlCommand(query, conexion);
@@ -384,7 +473,7 @@ namespace PavTpGrupo11.AccesoADatos
         }
 
 
-        public DataTable ObtenerCamiones()
+        public static DataTable ObtenerCamiones()
         {
             string query = "SELECT * FROM Camiones";
             SqlCommand cmd = new SqlCommand(query, conexion);
@@ -420,6 +509,31 @@ namespace PavTpGrupo11.AccesoADatos
             conexion.Close();
             return flag;
         }
+        public Camion obtenerCamion(string patente)
+        {
+            Camion resultado = new Camion();
+            conexion.Open();
+            string query = "SELECT * FROM Camiones WHERE Patente = '" + patente + "'";
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = query;
+            cmd.Connection = conexion;
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if(reader!= null && reader.Read())
+            {
+                resultado.patente = reader["Patente"].ToString();
+                resultado.Marca = reader["Marca_Camión"].ToString();
+                resultado.Anio_modelo = int.Parse(reader["Año_Modelo"].ToString());
+                resultado.Capacidad = int.Parse(reader["Capacidad"].ToString());
+
+            }
+            conexion.Close();
+            return resultado;
+
+
+        }
 
         public int ModificarCamion(Camion cam)
 
@@ -437,7 +551,7 @@ namespace PavTpGrupo11.AccesoADatos
         }
 
         
-        public DataTable ConsultarMaterialesDG()
+        public static DataTable ConsultarMaterialesDG()
         {
             string query = "SELECT * FROM Materiales";
             SqlCommand cmd = new SqlCommand(query, conexion);
@@ -483,6 +597,190 @@ namespace PavTpGrupo11.AccesoADatos
             flag = cmd.ExecuteNonQuery();
             conexion.Close();
             return flag;
+        }
+        public Material obtenerMAterial(int cod)
+        {
+            Material resultado = new Material();
+            conexion.Open();
+            string query = "SELECT * FROM Materiales WHERE Codigo_Material = '" + cod + "'";
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = query;
+            cmd.Connection = conexion;
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader != null && reader.Read())
+            {
+                resultado.codigo_material = int.Parse(reader["Codigo_Material"].ToString());
+                resultado.cantidad = int.Parse(reader["Cantidad"].ToString());
+                resultado.cod_unidad_medida = int.Parse(reader["Cod_Unidad_Medida"].ToString());
+                resultado.cod_proveedor = int.Parse(reader["Cod_Proveedor"].ToString());
+                resultado.fecha_ingreso = DateTime.Parse(reader["Fecha_Ingreso"].ToString());
+                resultado.precio = float.Parse(reader["precio"].ToString());
+
+            }
+            conexion.Close();
+            return resultado;
+        }
+        public static DataTable ObtenerMaterialxCod(int cod)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "SELECT * FROM Materiales WHERE Codigo_Material = '" + cod + "'";
+                
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                conexion.Open();
+                cmd.Connection = conexion;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+
+        public static int obtenerUltimoIDVenta()
+        {
+            try
+            {   
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT MAX(numero_venta) FROM Ventas";
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                conexion.Open();
+                cmd.Connection=conexion;
+
+                int resultado = (int)cmd.ExecuteScalar();
+                return resultado;
+
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+        public static DataTable ConsultarHerramientas()
+        {
+            string query = "SELECT * FROM Herramientas";
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
+            DataTable tabla = new DataTable();
+            data.Fill(tabla);
+
+            return tabla;
+        }
+        public static DataTable ObtenerHerramientaxCod(int cod)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "SELECT * FROM Herramientas WHERE Cod_herramienta = '" + cod + "'";
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                conexion.Open();
+                cmd.Connection = conexion;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+        public static bool RegistrarVenta(Venta venta, List<Objeto_de_Venta> listaMateriales, List<Objeto_de_Venta> listaHerramienta)
+        {
+            SqlTransaction objetoTransaccion = null;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "INSERT INTO Ventas VALUES(@num,@feVen,@patente,@atraso,@monto,@codObra,@feEntrega)";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@num", venta.numero);
+                cmd.Parameters.AddWithValue("@feVen",venta.fecha);
+                cmd.Parameters.AddWithValue("@patente",venta.patente);
+                cmd.Parameters.AddWithValue("@atraso",venta.atraso);
+                cmd.Parameters.AddWithValue("@monto",venta.monto);
+                cmd.Parameters.AddWithValue("@codObra",venta.codObra);
+                cmd.Parameters.AddWithValue("@feEntrega",venta.fechaEntrega);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                conexion.Open();
+                
+                objetoTransaccion=conexion.BeginTransaction("RegistroVenta");
+
+                cmd.Transaction=objetoTransaccion;
+
+                cmd.Connection = conexion;
+                cmd.ExecuteNonQuery();
+
+                foreach(var Objeto_de_Venta in listaHerramienta)
+                {
+                    string consultaEntregaXAlquiler = "INSERT INTO DETALLExENTREGAxALQUILER VALUES(@numven,@codHerra,@fechaDev,@respon,@precio)";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@numven", venta.numero);
+                    cmd.Parameters.AddWithValue("@codHerra",Objeto_de_Venta.cod);
+                    cmd.Parameters.AddWithValue("@fechaDev",Objeto_de_Venta.fecha);
+                    cmd.Parameters.AddWithValue("@respon",Objeto_de_Venta.responsable);
+                    cmd.Parameters.AddWithValue("@precio",Objeto_de_Venta.precio);
+                    cmd.CommandText=consultaEntregaXAlquiler;
+                    cmd.ExecuteNonQuery();
+                }
+                foreach(var Objeto_de_Venta in listaMateriales)
+                {
+                    string consultaEntregaXMaterial = "INSERT INTO ENTREGAxMATERIAL VALUES(@numven,@codMat,@cant,@precio)";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@numven", venta.numero);
+                    cmd.Parameters.AddWithValue("@codMat", Objeto_de_Venta.cod);
+                    cmd.Parameters.AddWithValue("@cant", Objeto_de_Venta.cantidad);
+                    cmd.Parameters.AddWithValue("@precio", Objeto_de_Venta.precio);
+                    cmd.CommandText = consultaEntregaXMaterial;
+                    cmd.ExecuteNonQuery();
+                }
+                objetoTransaccion.Commit();
+                return true;
+            }
+            catch (Exception)
+            {
+                objetoTransaccion.Rollback();
+                return false;
+            }
+            finally
+            {
+                conexion.Close();
+            }
         }
     }
 

@@ -116,6 +116,7 @@ namespace PavTpGrupo11.Formularios
             this.grillaUsuarios.RowTemplate.Height = 24;
             this.grillaUsuarios.Size = new System.Drawing.Size(336, 136);
             this.grillaUsuarios.TabIndex = 11;
+            this.grillaUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grillaUsuarios_CellClick);
             // 
             // btnSalir
             // 

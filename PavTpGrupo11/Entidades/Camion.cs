@@ -23,6 +23,10 @@ namespace PavTpGrupo11.Entidades
             Anio_modelo = anio_modelo;
             Capacidad = capacidad;
         }
+        public Camion()
+        {
+
+        }
     }
 
 }

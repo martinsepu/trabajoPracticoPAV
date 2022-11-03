@@ -14,9 +14,9 @@ namespace PavTpGrupo11.AccesoADatos
         ConexionSQL cn = new ConexionSQL();
 
         
-        public DataTable ConsultarUsuariosDG()
+        public static DataTable ConsultarUsuariosDG()
         {
-            return cn.ConsultarUsuariosDG();
+            return ConexionSQL.ConsultarUsuariosDG();
 
 
         }

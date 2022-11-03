@@ -66,6 +66,7 @@ namespace PavTpGrupo11.Formularios
             this.GrillaBarrio.Name = "GrillaBarrio";
             this.GrillaBarrio.Size = new System.Drawing.Size(228, 140);
             this.GrillaBarrio.TabIndex = 6;
+            this.GrillaBarrio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaBarrio_CellClick);
             // 
             // label3
             // 

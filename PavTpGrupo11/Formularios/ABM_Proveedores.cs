@@ -37,7 +37,7 @@ namespace PavTpGrupo11.Formularios
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Form1 frm = new Form1();
+            Principal frm = new Principal();
             frm.Show();
             this.Hide();
         }
