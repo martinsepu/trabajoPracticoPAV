@@ -47,6 +47,8 @@ namespace PavTpGrupo11
             this.aBMUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMRepuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,8 +62,14 @@ namespace PavTpGrupo11
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoBarriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoObraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoMaterialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estadisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -79,11 +87,13 @@ namespace PavTpGrupo11
             this.materialesToolStripMenuItem,
             this.usuariosToolStripMenuItem,
             this.repuestoToolStripMenuItem,
-            this.ventasToolStripMenuItem});
+            this.ventasToolStripMenuItem,
+            this.reportesToolStripMenuItem,
+            this.estadisticasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(868, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(878, 24);
             this.menuStrip1.TabIndex = 0;
             // 
             // proveedorerToolStripMenuItem
@@ -208,6 +218,21 @@ namespace PavTpGrupo11
             this.aBMRepuestoToolStripMenuItem.Text = "ABM repuesto";
             this.aBMRepuestoToolStripMenuItem.Click += new System.EventHandler(this.aBMRepuestoToolStripMenuItem_Click);
             // 
+            // ventasToolStripMenuItem
+            // 
+            this.ventasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registrarVentaToolStripMenuItem});
+            this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ventasToolStripMenuItem.Text = "Ventas";
+            // 
+            // registrarVentaToolStripMenuItem
+            // 
+            this.registrarVentaToolStripMenuItem.Name = "registrarVentaToolStripMenuItem";
+            this.registrarVentaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.registrarVentaToolStripMenuItem.Text = "Registrar Venta";
+            this.registrarVentaToolStripMenuItem.Click += new System.EventHandler(this.registrarVentaToolStripMenuItem_Click);
+            // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -308,33 +333,73 @@ namespace PavTpGrupo11
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // ventasToolStripMenuItem
+            // reportesToolStripMenuItem
             // 
-            this.ventasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registrarVentaToolStripMenuItem});
-            this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.ventasToolStripMenuItem.Text = "Ventas";
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listadoEmpleadosToolStripMenuItem,
+            this.listadoBarriosToolStripMenuItem,
+            this.listadoVentasToolStripMenuItem,
+            this.listadoObraToolStripMenuItem,
+            this.listadoProveedoresToolStripMenuItem,
+            this.listadoMaterialesToolStripMenuItem});
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.reportesToolStripMenuItem.Text = "Reportes";
             // 
-            // registrarVentaToolStripMenuItem
+            // listadoEmpleadosToolStripMenuItem
             // 
-            this.registrarVentaToolStripMenuItem.Name = "registrarVentaToolStripMenuItem";
-            this.registrarVentaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.registrarVentaToolStripMenuItem.Text = "Registrar Venta";
-            this.registrarVentaToolStripMenuItem.Click += new System.EventHandler(this.registrarVentaToolStripMenuItem_Click);
+            this.listadoEmpleadosToolStripMenuItem.Name = "listadoEmpleadosToolStripMenuItem";
+            this.listadoEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listadoEmpleadosToolStripMenuItem.Text = "Listado Empleados";
             // 
-            // Form1
+            // listadoBarriosToolStripMenuItem
+            // 
+            this.listadoBarriosToolStripMenuItem.Name = "listadoBarriosToolStripMenuItem";
+            this.listadoBarriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listadoBarriosToolStripMenuItem.Text = "Listado Barrios";
+            // 
+            // listadoVentasToolStripMenuItem
+            // 
+            this.listadoVentasToolStripMenuItem.Name = "listadoVentasToolStripMenuItem";
+            this.listadoVentasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listadoVentasToolStripMenuItem.Text = "Listado Ventas";
+            // 
+            // listadoObraToolStripMenuItem
+            // 
+            this.listadoObraToolStripMenuItem.Name = "listadoObraToolStripMenuItem";
+            this.listadoObraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listadoObraToolStripMenuItem.Text = "Listado Obra";
+            // 
+            // listadoProveedoresToolStripMenuItem
+            // 
+            this.listadoProveedoresToolStripMenuItem.Name = "listadoProveedoresToolStripMenuItem";
+            this.listadoProveedoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listadoProveedoresToolStripMenuItem.Text = "Listado Proveedores";
+            // 
+            // listadoMaterialesToolStripMenuItem
+            // 
+            this.listadoMaterialesToolStripMenuItem.Name = "listadoMaterialesToolStripMenuItem";
+            this.listadoMaterialesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listadoMaterialesToolStripMenuItem.Text = "Listado Materiales";
+            // 
+            // estadisticasToolStripMenuItem
+            // 
+            this.estadisticasToolStripMenuItem.Name = "estadisticasToolStripMenuItem";
+            this.estadisticasToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.estadisticasToolStripMenuItem.Text = "Estadisticas";
+            // 
+            // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(868, 494);
+            this.ClientSize = new System.Drawing.Size(878, 494);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -381,6 +446,14 @@ namespace PavTpGrupo11
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarVentaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoEmpleadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoBarriosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoVentasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoObraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoProveedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoMaterialesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem estadisticasToolStripMenuItem;
     }
 }
 
