@@ -183,16 +183,17 @@ namespace PavTpGrupo11.Formularios
             cmbBarrios.SelectedIndex = -1;
             
         }
-
+      
         private void GrillaEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int indice = e.RowIndex;
+           int indice = e.RowIndex;
             DataGridViewRow filaSelect = GrillaEmpleados.Rows[indice];
             int cod = int.Parse(filaSelect.Cells["Cod_Empleado"].Value.ToString());
             Empleado em = cn.obtenerEmpleado(cod);
             limpiarCampos();
             cargarCampos(em);
         }
+      
         private void cargarCampos(Empleado e)
         {
             txtNombre.Text=e.Nombre;

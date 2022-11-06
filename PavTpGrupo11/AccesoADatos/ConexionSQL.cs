@@ -633,6 +633,67 @@ namespace PavTpGrupo11.AccesoADatos
             conexion.Close();
             return resultado;
         }
+
+        public static DataTable ObtenerEmpleadoXcod(int cod)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "SELECT * FROM Empleados WHERE Cod_Empleado = '" + cod + "'";
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                conexion.Open();
+                cmd.Connection = conexion;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+        }
+        public static DataTable ObtenerEmpleadoXnom(string nom)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "SELECT * FROM Empleados WHERE Nombre = '" + nom + "'";
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                conexion.Open();
+                cmd.Connection = conexion;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+        }
         public static DataTable ObtenerMaterialxCod(int cod)
         {
             try
@@ -871,6 +932,93 @@ namespace PavTpGrupo11.AccesoADatos
                 conexion.Close();
             }
         }
+        public static DataTable ObtenerEmpleadosXbarrio()
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "Select v.nombre_barrio,COUNT(de.id_barrio) as Cantidad FROM Empleados de Inner join Barrios v On de.id_barrio = v.id_barrio Group by v.nombre_barrio";
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                conexion.Open();
+                cmd.Connection = conexion;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+        public static DataTable ObtenerBarrioXnombre(string nom)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "Select * FROM Barrios WHERE nombre_barrio ='" + nom + "'"; 
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                conexion.Open();
+                cmd.Connection = conexion;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+        public static DataTable ObtenerBarrioXCod(int id)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "Select * FROM Barrios WHERE id_barrio = '" + id + "'";
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                conexion.Open();
+                cmd.Connection = conexion;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
         public static DataTable ObtenerVentasxCamion()
         {
             try
@@ -900,6 +1048,9 @@ namespace PavTpGrupo11.AccesoADatos
                 conexion.Close();
             }
         }
+
+        
+
         public static bool RegistrarVenta(Venta venta, List<Objeto_de_Venta> listaMateriales, List<Objeto_de_Venta> listaHerramienta)
         {
             SqlTransaction objetoTransaccion = null;

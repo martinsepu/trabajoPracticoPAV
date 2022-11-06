@@ -133,5 +133,10 @@ namespace PavTpGrupo11
             txtProv.Enabled = false;
 
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

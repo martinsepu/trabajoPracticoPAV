@@ -174,5 +174,11 @@ namespace PavTpGrupo11
             EstadisticaVentasCamion ventana = new EstadisticaVentasCamion();
             ventana.ShowDialog();
         }
+
+        private void empleadosPorBarrioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EstadisticaEmpleadosXbarrio est = new EstadisticaEmpleadosXbarrio();
+            est.ShowDialog();
+        }
     }
 }
