@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DatosEstadisticas" targetNamespace="http://tempuri.org/DatosEstadisticas.xsd" xmlns:mstns="http://tempuri.org/DatosEstadisticas.xsd" xmlns="http://tempuri.org/DatosEstadisticas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DatosEstadisticas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DatosEstadisticas" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DatosEstadisticas">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TablaHerraVenta" msprop:Generator_RowClassName="TablaHerraVentaRow" msprop:Generator_RowEvHandlerName="TablaHerraVentaRowChangeEventHandler" msprop:Generator_RowDeletedName="TablaHerraVentaRowDeleted" msprop:Generator_RowDeletingName="TablaHerraVentaRowDeleting" msprop:Generator_RowEvArgName="TablaHerraVentaRowChangeEvent" msprop:Generator_TablePropName="TablaHerraVenta" msprop:Generator_RowChangedName="TablaHerraVentaRowChanged" msprop:Generator_UserTableName="TablaHerraVenta" msprop:Generator_RowChangingName="TablaHerraVentaRowChanging" msprop:Generator_TableClassName="TablaHerraVentaDataTable" msprop:Generator_TableVarName="tableTablaHerraVenta">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="numero_venta" msprop:Generator_UserColumnName="numero_venta" msprop:Generator_ColumnPropNameInTable="numero_ventaColumn" msprop:Generator_ColumnPropNameInRow="numero_venta" msprop:Generator_ColumnVarNameInTable="columnnumero_venta" type="xs:string" minOccurs="0" />
+              <xs:element name="Cantidad" msprop:Generator_UserColumnName="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VentasXCamion" msprop:Generator_RowEvHandlerName="VentasXCamionRowChangeEventHandler" msprop:Generator_RowDeletedName="VentasXCamionRowDeleted" msprop:Generator_RowDeletingName="VentasXCamionRowDeleting" msprop:Generator_RowEvArgName="VentasXCamionRowChangeEvent" msprop:Generator_TablePropName="VentasXCamion" msprop:Generator_RowChangedName="VentasXCamionRowChanged" msprop:Generator_RowChangingName="VentasXCamionRowChanging" msprop:Generator_TableClassName="VentasXCamionDataTable" msprop:Generator_RowClassName="VentasXCamionRow" msprop:Generator_TableVarName="tableVentasXCamion" msprop:Generator_UserTableName="VentasXCamion">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Camion" msprop:Generator_ColumnPropNameInRow="Camion" msprop:Generator_ColumnPropNameInTable="CamionColumn" msprop:Generator_ColumnVarNameInTable="columnCamion" msprop:Generator_UserColumnName="Camion" type="xs:string" minOccurs="0" />
+              <xs:element name="Cantidad_ventas" msprop:Generator_ColumnPropNameInRow="Cantidad_ventas" msprop:Generator_ColumnPropNameInTable="Cantidad_ventasColumn" msprop:Generator_ColumnVarNameInTable="columnCantidad_ventas" msprop:Generator_UserColumnName="Cantidad_ventas" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

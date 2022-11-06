@@ -483,6 +483,16 @@ namespace PavTpGrupo11.AccesoADatos
 
             return tabla;
         }
+        public static DataTable ObtenerVentas()
+        {
+            string query = "SELECT * FROM Ventas";
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
+            DataTable tabla = new DataTable();
+            data.Fill(tabla);
+
+            return tabla;
+        }
 
         public int InsertarCamion(Camion cam)
 
@@ -652,7 +662,93 @@ namespace PavTpGrupo11.AccesoADatos
                 conexion.Close();
             }
         }
+        public static DataTable ObtenerVentaxNum(int Num)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
 
+                string consulta = "SELECT * FROM Ventas WHERE numero_venta = '" + Num + "'";
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                conexion.Open();
+                cmd.Connection = conexion;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+        public static DataTable ObtenerVentaxCamion(string patente)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "SELECT * FROM Ventas WHERE patente_camion = '" + patente + "'";
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                conexion.Open();
+                cmd.Connection = conexion;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+        public static DataTable ObtenerVentaxObra(int Num)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "SELECT * FROM Ventas WHERE codigo_obra = '" + Num + "'";
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                conexion.Open();
+                cmd.Connection = conexion;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
         public static int obtenerUltimoIDVenta()
         {
             try
@@ -695,6 +791,93 @@ namespace PavTpGrupo11.AccesoADatos
                 SqlCommand cmd = new SqlCommand();
 
                 string consulta = "SELECT * FROM Herramientas WHERE Cod_herramienta = '" + cod + "'";
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                conexion.Open();
+                cmd.Connection = conexion;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+        public static DataTable ObtenerMaterialesxProv(int cod)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "SELECT * FROM Materiales WHERE Cod_Proveedor = '" + cod + "'";
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                conexion.Open();
+                cmd.Connection = conexion;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+        public static DataTable ObtenerHerramientasxVenta()
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "Select v.numero_venta,COUNT(de.cod_herramienta) as Cantidad FROM DETALLExENTREGAxALQUILER de Inner join Ventas v On de.numero_venta = v.numero_venta Group by v.numero_venta";
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                conexion.Open();
+                cmd.Connection = conexion;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+        public static DataTable ObtenerVentasxCamion()
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "Select v.patente_camion as Camion,COUNT(*) as Cantidad_ventas FROM Ventas v Group by v.patente_camion";
 
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;

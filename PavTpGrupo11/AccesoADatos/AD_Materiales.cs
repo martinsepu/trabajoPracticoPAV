@@ -35,6 +35,10 @@ namespace PavTpGrupo11.AccesoADatos
         {
             return ConexionSQL.ObtenerMaterialxCod(cod);
         }
+        public static DataTable ObtenerMaterialesxProv(int cod)
+        {
+            return ConexionSQL.ObtenerMaterialesxProv(cod);
+        }
 
     }
 }

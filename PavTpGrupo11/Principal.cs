@@ -150,5 +150,29 @@ namespace PavTpGrupo11
              ListadoBarrios b = new ListadoBarrios();   
             b.ShowDialog();
         }
+
+        private void listadoMaterialesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListadoMateriales ventan = new ListadoMateriales();
+            ventan.ShowDialog();
+        }
+
+        private void listadoVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListadoVentas ventana = new ListadoVentas();
+            ventana.ShowDialog();
+        }
+
+        private void herramientasPorVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EstadisticaHerrameintasVentas ventana = new EstadisticaHerrameintasVentas();
+            ventana.ShowDialog();
+        }
+
+        private void ventasPorCamionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EstadisticaVentasCamion ventana = new EstadisticaVentasCamion();
+            ventana.ShowDialog();
+        }
     }
 }

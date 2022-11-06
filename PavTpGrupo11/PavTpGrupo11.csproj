@@ -49,7 +49,7 @@
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -80,6 +80,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BD3K3G11_2022DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ConjuntoDeDatos\DatosEstadisticas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosEstadisticas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\Barrio.cs" />
     <Compile Include="Entidades\Camion.cs" />
     <Compile Include="Entidades\Empleado.cs" />
@@ -97,6 +102,18 @@
     <Compile Include="Entidades\TipoRepuesto.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Entidades\Venta.cs" />
+    <Compile Include="EstadisticaHerrameintasVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EstadisticaHerrameintasVentas.Designer.cs">
+      <DependentUpon>EstadisticaHerrameintasVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EstadisticaVentasCamion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EstadisticaVentasCamion.Designer.cs">
+      <DependentUpon>EstadisticaVentasCamion.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListadoBarrios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +125,18 @@
     </Compile>
     <Compile Include="ListadoEmpleados.Designer.cs">
       <DependentUpon>ListadoEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListadoMateriales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListadoMateriales.Designer.cs">
+      <DependentUpon>ListadoMateriales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListadoVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListadoVentas.Designer.cs">
+      <DependentUpon>ListadoVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
@@ -179,11 +208,25 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="EstadisticaHerrameintasVentas.resx">
+      <DependentUpon>EstadisticaHerrameintasVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EstadisticaHerramientaVenta.rdlc" />
+    <EmbeddedResource Include="EstadisticaVentasCamion.rdlc" />
+    <EmbeddedResource Include="EstadisticaVentasCamion.resx">
+      <DependentUpon>EstadisticaVentasCamion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListadoBarrios.resx">
       <DependentUpon>ListadoBarrios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListadoEmpleados.resx">
       <DependentUpon>ListadoEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListadoMateriales.resx">
+      <DependentUpon>ListadoMateriales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListadoVentas.resx">
+      <DependentUpon>ListadoVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -230,6 +273,8 @@
     </Compile>
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="ReporteListadoMateriales.rdlc" />
+    <EmbeddedResource Include="ReporteListadoVentas.rdlc" />
     <None Include="BD3K3G11_2022DataSet.xsc">
       <DependentUpon>BD3K3G11_2022DataSet.xsd</DependentUpon>
     </None>
@@ -240,6 +285,17 @@
     </None>
     <None Include="BD3K3G11_2022DataSet.xss">
       <DependentUpon>BD3K3G11_2022DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ConjuntoDeDatos\DatosEstadisticas.xsc">
+      <DependentUpon>DatosEstadisticas.xsd</DependentUpon>
+    </None>
+    <None Include="ConjuntoDeDatos\DatosEstadisticas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosEstadisticas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ConjuntoDeDatos\DatosEstadisticas.xss">
+      <DependentUpon>DatosEstadisticas.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
