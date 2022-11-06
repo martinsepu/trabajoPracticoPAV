@@ -36,6 +36,14 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="ProveedoresXbarrio" msprop:Generator_RowEvHandlerName="ProveedoresXbarrioRowChangeEventHandler" msprop:Generator_RowDeletedName="ProveedoresXbarrioRowDeleted" msprop:Generator_RowDeletingName="ProveedoresXbarrioRowDeleting" msprop:Generator_RowEvArgName="ProveedoresXbarrioRowChangeEvent" msprop:Generator_TablePropName="ProveedoresXbarrio" msprop:Generator_RowChangedName="ProveedoresXbarrioRowChanged" msprop:Generator_RowChangingName="ProveedoresXbarrioRowChanging" msprop:Generator_TableClassName="ProveedoresXbarrioDataTable" msprop:Generator_RowClassName="ProveedoresXbarrioRow" msprop:Generator_TableVarName="tableProveedoresXbarrio" msprop:Generator_UserTableName="ProveedoresXbarrio">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre_barrio" msprop:Generator_ColumnPropNameInRow="nombre_barrio" msprop:Generator_ColumnPropNameInTable="nombre_barrioColumn" msprop:Generator_ColumnVarNameInTable="columnnombre_barrio" msprop:Generator_UserColumnName="nombre_barrio" type="xs:string" minOccurs="0" />
+              <xs:element name="Cantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_UserColumnName="Cantidad" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

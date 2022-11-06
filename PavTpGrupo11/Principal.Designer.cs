@@ -59,6 +59,7 @@ namespace PavTpGrupo11
             this.estadisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herramientasPorVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasPorCamionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.empleadosPorBarrioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,7 +73,7 @@ namespace PavTpGrupo11
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.empleadosPorBarrioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.proveedoresPorBarrioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -294,7 +295,8 @@ namespace PavTpGrupo11
             this.estadisticasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.herramientasPorVentaToolStripMenuItem,
             this.ventasPorCamionToolStripMenuItem,
-            this.empleadosPorBarrioToolStripMenuItem});
+            this.empleadosPorBarrioToolStripMenuItem,
+            this.proveedoresPorBarrioToolStripMenuItem});
             this.estadisticasToolStripMenuItem.Name = "estadisticasToolStripMenuItem";
             this.estadisticasToolStripMenuItem.Size = new System.Drawing.Size(99, 24);
             this.estadisticasToolStripMenuItem.Text = "Estadisticas";
@@ -312,6 +314,13 @@ namespace PavTpGrupo11
             this.ventasPorCamionToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
             this.ventasPorCamionToolStripMenuItem.Text = "Ventas por Camion";
             this.ventasPorCamionToolStripMenuItem.Click += new System.EventHandler(this.ventasPorCamionToolStripMenuItem_Click);
+            // 
+            // empleadosPorBarrioToolStripMenuItem
+            // 
+            this.empleadosPorBarrioToolStripMenuItem.Name = "empleadosPorBarrioToolStripMenuItem";
+            this.empleadosPorBarrioToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
+            this.empleadosPorBarrioToolStripMenuItem.Text = "Empleados por barrio";
+            this.empleadosPorBarrioToolStripMenuItem.Click += new System.EventHandler(this.empleadosPorBarrioToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
@@ -375,7 +384,7 @@ namespace PavTpGrupo11
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(1031, 553);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(100, 48);
             this.btnSalir.TabIndex = 2;
@@ -386,7 +395,7 @@ namespace PavTpGrupo11
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(920, 554);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 47);
             this.button2.TabIndex = 1;
@@ -398,7 +407,7 @@ namespace PavTpGrupo11
             // 
             this.pictureBox2.Image = global::PavTpGrupo11.Properties.Resources.ferree;
             this.pictureBox2.Location = new System.Drawing.Point(-1, 111);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(1172, 297);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -410,19 +419,19 @@ namespace PavTpGrupo11
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(-1, 404);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1132, 142);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // empleadosPorBarrioToolStripMenuItem
+            // proveedoresPorBarrioToolStripMenuItem
             // 
-            this.empleadosPorBarrioToolStripMenuItem.Name = "empleadosPorBarrioToolStripMenuItem";
-            this.empleadosPorBarrioToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
-            this.empleadosPorBarrioToolStripMenuItem.Text = "Empleados por barrio";
-            this.empleadosPorBarrioToolStripMenuItem.Click += new System.EventHandler(this.empleadosPorBarrioToolStripMenuItem_Click);
+            this.proveedoresPorBarrioToolStripMenuItem.Name = "proveedoresPorBarrioToolStripMenuItem";
+            this.proveedoresPorBarrioToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
+            this.proveedoresPorBarrioToolStripMenuItem.Text = "Proveedores por barrio";
+            this.proveedoresPorBarrioToolStripMenuItem.Click += new System.EventHandler(this.proveedoresPorBarrioToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -435,7 +444,7 @@ namespace PavTpGrupo11
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
@@ -494,6 +503,7 @@ namespace PavTpGrupo11
         private System.Windows.Forms.ToolStripMenuItem herramientasPorVentaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ventasPorCamionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem empleadosPorBarrioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem proveedoresPorBarrioToolStripMenuItem;
     }
 }
 

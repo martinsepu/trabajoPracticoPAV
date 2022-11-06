@@ -4,6 +4,10 @@
 
     partial class DatosEstadisticas
     {
+        partial class ProveedoresXbarrioDataTable
+        {
+        }
+
         partial class EmpleadosXbarrioDataTable
         {
         }

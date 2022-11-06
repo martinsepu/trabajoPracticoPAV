@@ -180,5 +180,13 @@ namespace PavTpGrupo11
             EstadisticaEmpleadosXbarrio est = new EstadisticaEmpleadosXbarrio();
             est.ShowDialog();
         }
+
+        private void proveedoresPorBarrioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EstadisticasProveedoresXbarrio ep = new EstadisticasProveedoresXbarrio();
+            ep.ShowDialog();    
+            
+            
+        }
     }
 }

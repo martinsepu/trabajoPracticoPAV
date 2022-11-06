@@ -961,6 +961,35 @@ namespace PavTpGrupo11.AccesoADatos
                 conexion.Close();
             }
         }
+        public static DataTable ObtenerProveedoresXbarrio()
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "Select v.nombre_barrio,COUNT(de.id_barrio) as Cantidad FROM Proveedor de Inner join Barrios v On de.id_barrio = v.id_barrio Group by v.nombre_barrio";
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                conexion.Open();
+                cmd.Connection = conexion;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                return tabla;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
         public static DataTable ObtenerBarrioXnombre(string nom)
         {
             try
