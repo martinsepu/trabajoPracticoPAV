@@ -242,6 +242,60 @@ namespace PavTpGrupo11.AccesoADatos
             conexion.Close();
             return resultado;
         }
+        public Obra obtenerObra(int cod)
+        {
+            Obra resultado = new Obra();
+            conexion.Open();
+            string query = "SELECT * FROM Obras WHERE codigo_obra = '" + cod + "'";
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = query;
+            cmd.Connection = conexion;
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader != null && reader.Read())
+            {
+                resultado.Codigo_Obra = int.Parse(reader["codigo_obra"].ToString());
+                resultado.NombreObra = reader["nombre_Obra"].ToString();
+                resultado.calle = reader["calle"].ToString();
+                resultado.NroCalle = int.Parse(reader["nro_calle"].ToString()); 
+                resultado.IdBarrio = int.Parse(reader["id_barrio"].ToString());
+
+            }
+            conexion.Close();
+            return resultado;
+        }
+        public Proveedor ObtenerProveedor(int id)
+        {
+            Proveedor resultado = new Proveedor();
+            conexion.Open();
+            string query = "SELECT * FROM Proveedor WHERE Cod_Proveedor = '" + id + "'";
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = query;
+            cmd.Connection = conexion;
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader != null && reader.Read())
+            {
+                resultado.cod_proveedor = int.Parse(reader["Cod_Proveedor"].ToString());
+                resultado.Nombre = reader["Nombre"].ToString();
+                resultado.telefono = int.Parse(reader["Telefono"].ToString());
+                resultado.Mail = reader["Mail"].ToString();
+                resultado.calle = reader["Calle"].ToString();
+                resultado.NroCasa = int.Parse(reader["nro_Calle"].ToString());
+                resultado.IdBarrio = int.Parse(reader["id_barrio"].ToString());
+
+
+
+
+
+            }
+            conexion.Close();
+            return resultado;
+        }
         public int InsertarEmpleado(Empleado emp)
 
         {

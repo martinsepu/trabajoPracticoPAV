@@ -204,6 +204,11 @@ namespace PavTpGrupo11.Formularios
             txttelefonoE.Text = e.telefono.ToString();
             cmbBarrios.SelectedValue = e.IdBarrio; 
         }
+
+        private void GrillaEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
     }
 

@@ -26,5 +26,9 @@ namespace PavTpGrupo11.Entidades
             NroCalle = nroCalle;
             IdBarrio = idBarrio;
         }
+        public Obra()
+        {
+
+        }
     }
 }

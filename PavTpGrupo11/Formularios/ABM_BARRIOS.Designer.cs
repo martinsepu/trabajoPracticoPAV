@@ -29,6 +29,7 @@ namespace PavTpGrupo11.Formularios
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.TxtIDBarrio = new System.Windows.Forms.TextBox();
             this.txtNombreB = new System.Windows.Forms.TextBox();
             this.GrillaBarrio = new System.Windows.Forms.DataGridView();
@@ -40,41 +41,51 @@ namespace PavTpGrupo11.Formularios
             this.BtnAgregarB = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Btn_LimpiarCamposObra = new System.Windows.Forms.Button();
+            this.bD3K3G11_2022DataSet = new PavTpGrupo11.BD3K3G11_2022DataSet();
+            this.barriosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.barriosTableAdapter = new PavTpGrupo11.BD3K3G11_2022DataSetTableAdapters.BarriosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaBarrio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD3K3G11_2022DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barriosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // TxtIDBarrio
             // 
-            this.TxtIDBarrio.Location = new System.Drawing.Point(280, 57);
+            this.TxtIDBarrio.Location = new System.Drawing.Point(312, 58);
             this.TxtIDBarrio.Name = "TxtIDBarrio";
-            this.TxtIDBarrio.Size = new System.Drawing.Size(99, 20);
+            this.TxtIDBarrio.Size = new System.Drawing.Size(99, 22);
             this.TxtIDBarrio.TabIndex = 0;
             this.TxtIDBarrio.TextChanged += new System.EventHandler(this.TxtIDBarrio_TextChanged);
             // 
             // txtNombreB
             // 
-            this.txtNombreB.Location = new System.Drawing.Point(280, 103);
+            this.txtNombreB.Location = new System.Drawing.Point(312, 104);
             this.txtNombreB.Name = "txtNombreB";
-            this.txtNombreB.Size = new System.Drawing.Size(99, 20);
+            this.txtNombreB.Size = new System.Drawing.Size(99, 22);
             this.txtNombreB.TabIndex = 1;
             // 
             // GrillaBarrio
             // 
+            this.GrillaBarrio.AllowUserToAddRows = false;
+            this.GrillaBarrio.AllowUserToDeleteRows = false;
             this.GrillaBarrio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GrillaBarrio.Location = new System.Drawing.Point(12, 179);
             this.GrillaBarrio.Name = "GrillaBarrio";
-            this.GrillaBarrio.Size = new System.Drawing.Size(228, 140);
+            this.GrillaBarrio.ReadOnly = true;
+            this.GrillaBarrio.RowHeadersWidth = 51;
+            this.GrillaBarrio.Size = new System.Drawing.Size(299, 143);
             this.GrillaBarrio.TabIndex = 6;
             this.GrillaBarrio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaBarrio_CellClick);
+            this.GrillaBarrio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaBarrio_CellContentClick);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(190, 58);
+            this.label3.Location = new System.Drawing.Point(222, 59);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 16);
+            this.label3.Size = new System.Drawing.Size(74, 20);
             this.label3.TabIndex = 7;
             this.label3.Text = "ID barrio:";
             // 
@@ -82,11 +93,12 @@ namespace PavTpGrupo11.Formularios
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(183, 104);
+            this.label4.Location = new System.Drawing.Point(191, 104);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 16);
+            this.label4.Size = new System.Drawing.Size(115, 20);
             this.label4.TabIndex = 8;
             this.label4.Text = "Nombre Barrio:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // btnSalirB
             // 
@@ -146,7 +158,7 @@ namespace PavTpGrupo11.Formularios
             // 
             // Btn_LimpiarCamposObra
             // 
-            this.Btn_LimpiarCamposObra.Location = new System.Drawing.Point(261, 140);
+            this.Btn_LimpiarCamposObra.Location = new System.Drawing.Point(293, 141);
             this.Btn_LimpiarCamposObra.Name = "Btn_LimpiarCamposObra";
             this.Btn_LimpiarCamposObra.Size = new System.Drawing.Size(118, 22);
             this.Btn_LimpiarCamposObra.TabIndex = 9;
@@ -154,10 +166,24 @@ namespace PavTpGrupo11.Formularios
             this.Btn_LimpiarCamposObra.UseVisualStyleBackColor = true;
             this.Btn_LimpiarCamposObra.Click += new System.EventHandler(this.Btn_LimpiarCamposObra_Click);
             // 
+            // bD3K3G11_2022DataSet
+            // 
+            this.bD3K3G11_2022DataSet.DataSetName = "BD3K3G11_2022DataSet";
+            this.bD3K3G11_2022DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // barriosBindingSource
+            // 
+            this.barriosBindingSource.DataMember = "Barrios";
+            this.barriosBindingSource.DataSource = this.bD3K3G11_2022DataSet;
+            // 
+            // barriosTableAdapter
+            // 
+            this.barriosTableAdapter.ClearBeforeFill = true;
+            // 
             // ABM_BARRIOS
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(412, 430);
+            this.ClientSize = new System.Drawing.Size(441, 440);
             this.Controls.Add(this.Btn_LimpiarCamposObra);
             this.Controls.Add(this.btnSalirB);
             this.Controls.Add(this.label4);
@@ -174,6 +200,8 @@ namespace PavTpGrupo11.Formularios
             this.Load += new System.EventHandler(this.ABM_BARRIOS_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.GrillaBarrio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD3K3G11_2022DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barriosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,5 +230,8 @@ namespace PavTpGrupo11.Formularios
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSalirB;
         private System.Windows.Forms.Button Btn_LimpiarCamposObra;
+        private BD3K3G11_2022DataSet bD3K3G11_2022DataSet;
+        private System.Windows.Forms.BindingSource barriosBindingSource;
+        private BD3K3G11_2022DataSetTableAdapters.BarriosTableAdapter barriosTableAdapter;
     }
 }

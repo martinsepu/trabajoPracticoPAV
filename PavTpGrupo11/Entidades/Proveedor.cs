@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,12 +22,16 @@ namespace PavTpGrupo11.Entidades
         public Proveedor(int cod_proveedor, string nombre, int telefono, string calle, int nroCasa, int idBarrio, string mail)
         {
             this.cod_proveedor = cod_proveedor;
-            Nombre = nombre;
+            this.Nombre = nombre;
             this.telefono = telefono;
             this.calle = calle;
-            NroCasa = nroCasa;
-            IdBarrio = idBarrio;
-            Mail = mail;
+            this.NroCasa = nroCasa;
+            this.IdBarrio = idBarrio;
+            this.Mail = mail;
+        }
+        public Proveedor()
+        {
+
         }
     }
 }

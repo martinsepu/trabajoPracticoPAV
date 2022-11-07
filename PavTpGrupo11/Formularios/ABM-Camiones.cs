@@ -29,6 +29,8 @@ namespace PavTpGrupo11.Formularios
 
         private void ABM_Camiones_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'bD3K3G11_2022DataSet.Camiones' Puede moverla o quitarla según sea necesario.
+            this.camionesTableAdapter.Fill(this.bD3K3G11_2022DataSet.Camiones);
             GrillaCamiones.DataSource = AD_Camion.ObtenerCamiones();
         }
 
@@ -162,6 +164,11 @@ namespace PavTpGrupo11.Formularios
             TxtMarca.Text=ca.Marca;
             txtAño.Text = ca.Anio_modelo.ToString();
             txtCapacidad.Text = ca.Capacidad.ToString();
+        }
+
+        private void GrillaCamiones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

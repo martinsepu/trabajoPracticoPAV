@@ -27,10 +27,6 @@ namespace PavTpGrupo11.Formularios
             grillaObra.DataSource = ConexionSQL.ConsultarObrasDG();
             cargarCombo();
         }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
         //
 
         //
@@ -164,6 +160,29 @@ namespace PavTpGrupo11.Formularios
             cmbBarrios.SelectedIndex = -1;
             txt_NombreObra.Text = "";
             txt_NroDeCalleObra.Text = "";
+        }
+
+        public void cargarCampos(Obra o)
+        {
+            txt_NombreObra.Text = o.NombreObra;
+            txt_CodObra.Text = o.Codigo_Obra.ToString();
+            txt_CalleObra.Text = o.calle;
+            txt_NroDeCalleObra.Text = o.NroCalle.ToString();
+        }
+        private void grillaObra_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = e.RowIndex;
+            DataGridViewRow filaSelect = grillaObra.Rows[indice];
+            int cod = int.Parse(filaSelect.Cells["codigo_obra"].Value.ToString());
+            Obra em = cn.obtenerObra(cod);
+            limpiarCampos();
+            cargarCampos(em);
+        }
+    
+
+        private void grillaObra_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
