@@ -17,5 +17,9 @@ namespace PavTpGrupo11.Entidades
             this.Codigo = cod;
             this.nombre = nom;
         }
+        public Repuesto()
+        {
+
+        }
     }
 }

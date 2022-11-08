@@ -29,7 +29,7 @@ namespace PavTpGrupo11.Formularios
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Form1 frm = new Form1();
+            Principal frm = new Principal();
             frm.Show();
             this.Hide();
         }
@@ -158,6 +158,21 @@ namespace PavTpGrupo11.Formularios
         {
             txtCodigo.Text = "";
             txtNombre.Text = "";
+        }
+
+        private void GrillaRepuestos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = e.RowIndex;
+            DataGridViewRow filaSelect = GrillaRepuestos.Rows[indice];
+            int cod = int.Parse(filaSelect.Cells["Codigo_Repuesto"].Value.ToString());
+            Repuesto r = repuestoN.obtenerRepuesto(cod);
+            limpiarCampos();
+            cargarCampos(r);
+        }
+        private void cargarCampos(Repuesto r)
+        {
+            txtCodigo.Text=r.Codigo.ToString();
+            txtNombre.Text=r.nombre.ToString();
         }
     }
 }

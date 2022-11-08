@@ -37,7 +37,7 @@ namespace PavTpGrupo11.Formularios
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Form1 frm = new Form1();
+            Principal frm = new Principal();
             frm.Show();
             this.Hide();
         }
@@ -163,5 +163,27 @@ namespace PavTpGrupo11.Formularios
             txt_TelefonoProv.Text = "";
             txt_NroDeCalleProv.Text = "";
         }
+        private void CargarCampos(Proveedor p)
+        {
+            txt_NombreProv.Text = p.Nombre;
+            txt_CodProv.Text = p.cod_proveedor.ToString();
+            txt_CalleProv.Text = p.calle.ToString();
+            txt_NroDeCalleProv.Text = p.NroCasa.ToString();
+            txt_TelefonoProv.Text = p.telefono.ToString();
+            cmbBarrios.SelectedValue = p.IdBarrio;
+            txt_MailProv.Text = p.Mail;
+        }
+      
+
+        private void grillaProveedores_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = e.RowIndex;
+            DataGridViewRow filaSelect = grillaProveedores.Rows[indice];
+            int cod = int.Parse(filaSelect.Cells["Cod_Proveedor"].Value.ToString());
+            Proveedor em = cn.ObtenerProveedor(cod);
+            limpiarCampos();
+            CargarCampos(em);
+        }
     }
-}
+    }
+

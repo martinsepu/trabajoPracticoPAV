@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PavTpGrupo11.Entidades;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace PavTpGrupo11.Formularios
 {
@@ -26,14 +27,14 @@ namespace PavTpGrupo11.Formularios
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Form1 frm = new Form1();
+            Principal frm = new Principal();
             frm.Show();
             this.Hide();
         }
 
         private void ABM_materialescs_Load(object sender, EventArgs e)
         {
-            grillaMateriales.DataSource = cn.ConsultarMaterialesDG();
+            grillaMateriales.DataSource = ConexionSQL.ConsultarMaterialesDG();
             this.cargarCombos();
         }
 
@@ -64,9 +65,9 @@ namespace PavTpGrupo11.Formularios
                 {
                     throw;
                 }
-                grillaMateriales.DataSource = cn.ConsultarMaterialesDG();
+                grillaMateriales.DataSource = ConexionSQL.ConsultarMaterialesDG();
             }
-        grillaMateriales.DataSource = cn.ConsultarMaterialesDG();
+        grillaMateriales.DataSource = ConexionSQL.ConsultarMaterialesDG();
         }
 
         
@@ -98,9 +99,9 @@ namespace PavTpGrupo11.Formularios
                 {
                     throw;
                 }
-                grillaMateriales.DataSource = cn.ConsultarMaterialesDG();                   
+                grillaMateriales.DataSource = ConexionSQL.ConsultarMaterialesDG();                   
             }
-            grillaMateriales.DataSource = cn.ConsultarMaterialesDG();
+            grillaMateriales.DataSource = ConexionSQL.ConsultarMaterialesDG();
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -130,9 +131,9 @@ namespace PavTpGrupo11.Formularios
                 {
                     throw;
                 }
-                grillaMateriales.DataSource = cn.ConsultarMaterialesDG();
+                grillaMateriales.DataSource = ConexionSQL.ConsultarMaterialesDG();
             }
-        grillaMateriales.DataSource = cn.ConsultarMaterialesDG();
+        grillaMateriales.DataSource = ConexionSQL.ConsultarMaterialesDG();
         }
 
         private void btnLimpiarCampos_Click(object sender, EventArgs e)
@@ -154,6 +155,24 @@ namespace PavTpGrupo11.Formularios
             cmbProvedores.SelectedIndex = -1;
             txtPrecio.Text = "";
             txtUnidadMedida.Text = "";
+        }
+
+        private void grillaMateriales_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = e.RowIndex;
+            DataGridViewRow filaSelect = grillaMateriales.Rows[indice];
+            int cod = int.Parse(filaSelect.Cells["Codigo_Material"].Value.ToString());
+            Material ma = cn.obtenerMAterial(cod);
+            borrarCampos();
+            cargarCampos(ma);
+        }
+        private void cargarCampos(Material ma)
+        {
+            txtCodigo.Text = ma.codigo_material.ToString();
+            txtCantidad.Text = ma.cantidad.ToString();
+            txtUnidadMedida.Text = ma.cod_unidad_medida.ToString();
+            cmbProvedores.SelectedValue = ma.cod_proveedor;
+            txtPrecio.Text = ma.precio.ToString();
         }
     }
 }

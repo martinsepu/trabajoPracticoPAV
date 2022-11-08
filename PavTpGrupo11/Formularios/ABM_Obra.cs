@@ -24,12 +24,8 @@ namespace PavTpGrupo11.Formularios
         }
         private void ABM_Obra_Load(object sender, EventArgs e)
         {
-            grillaObra.DataSource = cn.ConsultarObrasDG();
+            grillaObra.DataSource = ConexionSQL.ConsultarObrasDG();
             cargarCombo();
-        }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
         //
 
@@ -62,9 +58,9 @@ namespace PavTpGrupo11.Formularios
                 {
                     throw;
                 }
-                grillaObra.DataSource = cn.ConsultarObrasDG();
+                grillaObra.DataSource = ConexionSQL.ConsultarObrasDG();
             }
-            grillaObra.DataSource = cn.ConsultarObrasDG();
+            grillaObra.DataSource = ConexionSQL.ConsultarObrasDG();
 
         }
 
@@ -98,9 +94,9 @@ namespace PavTpGrupo11.Formularios
                 {
                     throw;
                 }
-                grillaObra.DataSource = cn.ConsultarObrasDG();
+                grillaObra.DataSource = ConexionSQL.ConsultarObrasDG();
             }
-            grillaObra.DataSource = cn.ConsultarObrasDG();
+            grillaObra.DataSource = ConexionSQL.ConsultarObrasDG();
 
         }
 
@@ -132,9 +128,9 @@ namespace PavTpGrupo11.Formularios
                 {
                     throw;
                 }
-                grillaObra.DataSource = cn.ConsultarObrasDG();
+                grillaObra.DataSource = ConexionSQL.ConsultarObrasDG();
             }
-            grillaObra.DataSource = cn.ConsultarObrasDG();
+            grillaObra.DataSource = ConexionSQL.ConsultarObrasDG();
         }
 
         private void Btn_LimpiarCamposObra_Click(object sender, EventArgs e)
@@ -145,7 +141,7 @@ namespace PavTpGrupo11.Formularios
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Form1 frm = new Form1();
+            Principal frm = new Principal();
             frm.Show();
             this.Hide();
         }
@@ -164,6 +160,29 @@ namespace PavTpGrupo11.Formularios
             cmbBarrios.SelectedIndex = -1;
             txt_NombreObra.Text = "";
             txt_NroDeCalleObra.Text = "";
+        }
+
+        public void cargarCampos(Obra o)
+        {
+            txt_NombreObra.Text = o.NombreObra;
+            txt_CodObra.Text = o.Codigo_Obra.ToString();
+            txt_CalleObra.Text = o.calle;
+            txt_NroDeCalleObra.Text = o.NroCalle.ToString();
+        }
+        private void grillaObra_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = e.RowIndex;
+            DataGridViewRow filaSelect = grillaObra.Rows[indice];
+            int cod = int.Parse(filaSelect.Cells["codigo_obra"].Value.ToString());
+            Obra em = cn.obtenerObra(cod);
+            limpiarCampos();
+            cargarCampos(em);
+        }
+    
+
+        private void grillaObra_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

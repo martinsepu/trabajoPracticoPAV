@@ -11,9 +11,13 @@ namespace PavTpGrupo11.AccesoADatos
     public class AD_Materiales
     {
         ConexionSQL cn = new ConexionSQL();
-        public DataTable ConsultarMaterialesDG()
+        public static DataTable ConsultarMaterialesDG()
         {
-            return cn.ConsultarMaterialesDG();
+            return ConexionSQL.ConsultarMaterialesDG();
+        }
+        public Material obtenerMAterial(int cod)
+        {
+            return cn.obtenerMAterial(cod);
         }
         public int InsertarMaterial(Material ma)
         {
@@ -26,6 +30,14 @@ namespace PavTpGrupo11.AccesoADatos
         public int eliminarMaterial(string Material)
         {
             return cn.eliminarMaterial(Material);
+        }
+        public static DataTable ObtenerMaterialxCod(int cod)
+        {
+            return ConexionSQL.ObtenerMaterialxCod(cod);
+        }
+        public static DataTable ObtenerMaterialesxProv(int cod)
+        {
+            return ConexionSQL.ObtenerMaterialesxProv(cod);
         }
 
     }

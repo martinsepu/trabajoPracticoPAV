@@ -16,6 +16,10 @@ namespace PavTpGrupo11.AccesoADatos
         {
             return cn.Login(us.nombre, us.contrasena);
         }
+        public Usuario obtenerUsuario(string nom)
+        {
+            return cn.obtenerUsuario(nom);
+        }
 
         public DataTable consultarUsuarios()
         {

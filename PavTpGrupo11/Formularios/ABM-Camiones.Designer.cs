@@ -29,6 +29,7 @@ namespace PavTpGrupo11.Formularios
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtCapacidad = new System.Windows.Forms.MaskedTextBox();
             this.txtAño = new System.Windows.Forms.TextBox();
             this.txtPatente = new System.Windows.Forms.TextBox();
@@ -44,40 +45,51 @@ namespace PavTpGrupo11.Formularios
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.bD3K3G11_2022DataSet = new PavTpGrupo11.BD3K3G11_2022DataSet();
+            this.camionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.camionesTableAdapter = new PavTpGrupo11.BD3K3G11_2022DataSetTableAdapters.CamionesTableAdapter();
+            this.camionesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCamiones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD3K3G11_2022DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.camionesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.camionesBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCapacidad
             // 
-            this.txtCapacidad.Location = new System.Drawing.Point(484, 179);
+            this.txtCapacidad.Location = new System.Drawing.Point(645, 220);
+            this.txtCapacidad.Margin = new System.Windows.Forms.Padding(4);
             this.txtCapacidad.Mask = "99999";
             this.txtCapacidad.Name = "txtCapacidad";
-            this.txtCapacidad.Size = new System.Drawing.Size(130, 20);
+            this.txtCapacidad.Size = new System.Drawing.Size(172, 22);
             this.txtCapacidad.TabIndex = 3;
             this.txtCapacidad.ValidatingType = typeof(int);
             // 
             // txtAño
             // 
-            this.txtAño.Location = new System.Drawing.Point(483, 140);
+            this.txtAño.Location = new System.Drawing.Point(644, 172);
+            this.txtAño.Margin = new System.Windows.Forms.Padding(4);
             this.txtAño.Name = "txtAño";
-            this.txtAño.Size = new System.Drawing.Size(131, 20);
+            this.txtAño.Size = new System.Drawing.Size(173, 22);
             this.txtAño.TabIndex = 2;
             // 
             // txtPatente
             // 
-            this.txtPatente.Location = new System.Drawing.Point(483, 58);
+            this.txtPatente.Location = new System.Drawing.Point(644, 71);
+            this.txtPatente.Margin = new System.Windows.Forms.Padding(4);
             this.txtPatente.Name = "txtPatente";
-            this.txtPatente.Size = new System.Drawing.Size(131, 20);
+            this.txtPatente.Size = new System.Drawing.Size(173, 22);
             this.txtPatente.TabIndex = 0;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(385, 182);
+            this.label4.Location = new System.Drawing.Point(513, 224);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 18);
+            this.label4.Size = new System.Drawing.Size(115, 24);
             this.label4.TabIndex = 69;
             this.label4.Text = "Capacidad:";
             // 
@@ -85,9 +97,10 @@ namespace PavTpGrupo11.Formularios
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(346, 141);
+            this.label3.Location = new System.Drawing.Point(461, 174);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 18);
+            this.label3.Size = new System.Drawing.Size(165, 24);
             this.label3.TabIndex = 68;
             this.label3.Text = "Año del Modelo:";
             // 
@@ -95,9 +108,10 @@ namespace PavTpGrupo11.Formularios
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(327, 98);
+            this.label2.Location = new System.Drawing.Point(436, 121);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 18);
+            this.label2.Size = new System.Drawing.Size(185, 24);
             this.label2.TabIndex = 67;
             this.label2.Text = "Marca del Camion:";
             // 
@@ -105,17 +119,19 @@ namespace PavTpGrupo11.Formularios
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(406, 57);
+            this.label1.Location = new System.Drawing.Point(541, 70);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 18);
+            this.label1.Size = new System.Drawing.Size(86, 24);
             this.label1.TabIndex = 66;
             this.label1.Text = "Patente:";
             // 
             // btnLimpiarCampos
             // 
-            this.btnLimpiarCampos.Location = new System.Drawing.Point(644, 205);
+            this.btnLimpiarCampos.Location = new System.Drawing.Point(859, 252);
+            this.btnLimpiarCampos.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiarCampos.Name = "btnLimpiarCampos";
-            this.btnLimpiarCampos.Size = new System.Drawing.Size(97, 26);
+            this.btnLimpiarCampos.Size = new System.Drawing.Size(129, 32);
             this.btnLimpiarCampos.TabIndex = 7;
             this.btnLimpiarCampos.Text = "Limpiar campos";
             this.btnLimpiarCampos.UseVisualStyleBackColor = true;
@@ -123,9 +139,10 @@ namespace PavTpGrupo11.Formularios
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(654, 427);
+            this.btnSalir.Location = new System.Drawing.Point(872, 526);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(87, 35);
+            this.btnSalir.Size = new System.Drawing.Size(116, 43);
             this.btnSalir.TabIndex = 8;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -133,30 +150,35 @@ namespace PavTpGrupo11.Formularios
             // 
             // TxtMarca
             // 
-            this.TxtMarca.Location = new System.Drawing.Point(483, 100);
-            this.TxtMarca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtMarca.Location = new System.Drawing.Point(644, 123);
+            this.TxtMarca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtMarca.Name = "TxtMarca";
-            this.TxtMarca.Size = new System.Drawing.Size(131, 20);
+            this.TxtMarca.Size = new System.Drawing.Size(173, 22);
             this.TxtMarca.TabIndex = 1;
             // 
             // GrillaCamiones
             // 
+            this.GrillaCamiones.AllowUserToAddRows = false;
+            this.GrillaCamiones.AllowUserToDeleteRows = false;
             this.GrillaCamiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GrillaCamiones.Location = new System.Drawing.Point(64, 220);
-            this.GrillaCamiones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GrillaCamiones.Location = new System.Drawing.Point(85, 271);
+            this.GrillaCamiones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GrillaCamiones.Name = "GrillaCamiones";
+            this.GrillaCamiones.ReadOnly = true;
             this.GrillaCamiones.RowHeadersWidth = 51;
             this.GrillaCamiones.RowTemplate.Height = 24;
-            this.GrillaCamiones.Size = new System.Drawing.Size(533, 185);
+            this.GrillaCamiones.Size = new System.Drawing.Size(557, 217);
             this.GrillaCamiones.TabIndex = 80;
+            this.GrillaCamiones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaCamiones_CellClick);
+            this.GrillaCamiones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaCamiones_CellContentClick);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PavTpGrupo11.Properties.Resources.transporte_de_camiones_con_materiales_de_construccion;
-            this.pictureBox1.Location = new System.Drawing.Point(50, 10);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(67, 12);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(272, 192);
+            this.pictureBox1.Size = new System.Drawing.Size(363, 236);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 78;
             this.pictureBox1.TabStop = false;
@@ -165,9 +187,10 @@ namespace PavTpGrupo11.Formularios
             // 
             this.btnBorrar.Image = global::PavTpGrupo11.Properties.Resources.boton_eliminar;
             this.btnBorrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBorrar.Location = new System.Drawing.Point(363, 432);
+            this.btnBorrar.Location = new System.Drawing.Point(484, 532);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(108, 29);
+            this.btnBorrar.Size = new System.Drawing.Size(144, 36);
             this.btnBorrar.TabIndex = 6;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
@@ -177,9 +200,10 @@ namespace PavTpGrupo11.Formularios
             // 
             this.btnModificar.Image = global::PavTpGrupo11.Properties.Resources.editar;
             this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(208, 432);
+            this.btnModificar.Location = new System.Drawing.Point(277, 532);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(108, 29);
+            this.btnModificar.Size = new System.Drawing.Size(144, 36);
             this.btnModificar.TabIndex = 5;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -190,20 +214,40 @@ namespace PavTpGrupo11.Formularios
             this.btnAgregar.ForeColor = System.Drawing.Color.Black;
             this.btnAgregar.Image = global::PavTpGrupo11.Properties.Resources.agregar_usuario;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(64, 432);
+            this.btnAgregar.Location = new System.Drawing.Point(85, 532);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(108, 29);
+            this.btnAgregar.Size = new System.Drawing.Size(144, 36);
             this.btnAgregar.TabIndex = 4;
             this.btnAgregar.Text = "Agregar ";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // bD3K3G11_2022DataSet
+            // 
+            this.bD3K3G11_2022DataSet.DataSetName = "BD3K3G11_2022DataSet";
+            this.bD3K3G11_2022DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // camionesBindingSource
+            // 
+            this.camionesBindingSource.DataMember = "Camiones";
+            this.camionesBindingSource.DataSource = this.bD3K3G11_2022DataSet;
+            // 
+            // camionesTableAdapter
+            // 
+            this.camionesTableAdapter.ClearBeforeFill = true;
+            // 
+            // camionesBindingSource1
+            // 
+            this.camionesBindingSource1.DataMember = "Camiones";
+            this.camionesBindingSource1.DataSource = this.bD3K3G11_2022DataSet;
+            // 
             // ABM_Camiones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(748, 488);
+            this.ClientSize = new System.Drawing.Size(997, 601);
             this.Controls.Add(this.GrillaCamiones);
             this.Controls.Add(this.TxtMarca);
             this.Controls.Add(this.pictureBox1);
@@ -219,13 +263,16 @@ namespace PavTpGrupo11.Formularios
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLimpiarCampos);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ABM_Camiones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABM_Camiones";
             this.Load += new System.EventHandler(this.ABM_Camiones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCamiones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD3K3G11_2022DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.camionesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.camionesBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,5 +294,9 @@ namespace PavTpGrupo11.Formularios
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox TxtMarca;
         private System.Windows.Forms.DataGridView GrillaCamiones;
+        private BD3K3G11_2022DataSet bD3K3G11_2022DataSet;
+        private System.Windows.Forms.BindingSource camionesBindingSource;
+        private BD3K3G11_2022DataSetTableAdapters.CamionesTableAdapter camionesTableAdapter;
+        private System.Windows.Forms.BindingSource camionesBindingSource1;
     }
 }
